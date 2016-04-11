@@ -14,7 +14,17 @@
 
 class singleArm{
 public:
-	void setup(ofVec2f axisPos, int length, int length2);
+	
+	~singleArm()
+	{
+		axis.clearParent();
+		camNode.clearParent();
+		node.clearParent();
+		node2.clearParent();
+		gearNode.clearParent();
+	}
+	
+	void setup(ofVec2f axisPos, int length, int length2, bool flip);
 	void update(ofVec2f pos, float degAngle = 45);
 	void draw();
 	
@@ -22,9 +32,11 @@ public:
 	ofNode axis;
 	ofNode node;
 	ofNode node2;
+	ofNode gearNode;
 	ofVec3f target;
 	int armLength;
 	int targLength;
+	bool bFlip;
 };
 
 class twinLink{

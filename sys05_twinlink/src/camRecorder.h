@@ -10,6 +10,7 @@
 #define camRecorder_h
 
 #include "ofMain.h"
+#include "ofxDxfExport.h"
 
 class camRecorder{
 public:
@@ -21,6 +22,8 @@ public:
 	bool bInv;
 	deque<float> dists;
 	ofVec2f camAxis;
+	
+	void Export(string filename);
 };
 
 #endif /* camRecorder_h */
